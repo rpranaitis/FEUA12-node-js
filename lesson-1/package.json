@@ -1,0 +1,15 @@
+{
+  "name": "lesson-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rolandas",
+  "license": "ISC",
+  "dependencies": {
+    "casual": "^1.6.2",
+    "express": "^4.18.2"
+  }
+}
