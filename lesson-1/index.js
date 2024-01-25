@@ -1,7 +1,10 @@
 const express = require("express");
 const casual = require("casual");
+const cors = require("cors");
 const app = express();
 const port = 3000;
+
+app.use(cors());
 
 const randomCity = casual.city;
 const randomNumber = Math.floor(Math.random() * 10) + 1;
