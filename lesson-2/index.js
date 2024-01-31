@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
     res.send("OK");
 });
 
-const brands = ["BMW", "VW", "Porsche"];
+const brands = ["BMW", "VW", "Porsche", "Audi"];
 
 app.get("/brands", (req, res) => {
     res.send(brands);
