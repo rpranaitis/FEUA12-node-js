@@ -1,0 +1,52 @@
+body {
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+    background: #edf2f6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    height: 45px;
+    gap: 20px;
+    position: fixed;
+    top: 0;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #edf2f6;
+    height: 55px;
+    position: fixed;
+    bottom: 0;
+    font-size: 12px;
+}
+
+header a {
+    text-decoration: none;
+    padding: 15px;
+    font-weight: bold;
+    color: #677ee8;
+}
+
+header a.active-link {
+    color: #cbcbcb;
+}
+
+.container {
+    margin-top: 45px;
+    text-align: center;
+    padding: 30px;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
