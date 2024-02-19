@@ -78,10 +78,38 @@ app.get('/users/:order?', async (req, res) => {
 
   try {
     const connection = await client.connect();
-    const data = await connection.db(process.env.DB_DATABASE).collection('users').find().sort({ name: orderParam }).toArray();
+    const data = await connection
+      .db(process.env.DB_DATABASE)
+      .collection('users')
+      .aggregate([
+        {
+          $lookup: {
+            from: 'services',
+            localField: 'service_id',
+            foreignField: '_id',
+            as: 'service',
+          },
+        },
+        {
+          $unwind: {
+            path: '$service',
+          },
+        },
+      ])
+      .sort({ name: orderParam })
+      .toArray();
     await connection.close();
 
-    return res.send(data);
+    const response = data.map((item) => ({
+      _id: item._id,
+      name: item.name,
+      surname: item.surname,
+      email: item.email,
+      ip: item.ip,
+      service: item.service,
+    }));
+
+    return res.send(response);
   } catch (error) {
     return res.status(500).send({ error });
   }
@@ -111,6 +139,7 @@ app.post('/users', async (req, res) => {
       return res.status(500).send({ message: `Service with id ${service_id} not found.` });
     }
 
+    req.body.service_id = new ObjectId(`${req.body.service_id}`);
     req.body.ip = generateRandomIPAddress();
 
     await connection.db(process.env.DB_DATABASE).collection('users').insertOne(req.body);
