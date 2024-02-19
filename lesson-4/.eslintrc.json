@@ -9,6 +9,8 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        
+        "no-underscore-dangle": 0,
+        "camelcase": 0,
+        "no-console": 0
     }
 }

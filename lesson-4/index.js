@@ -66,14 +66,12 @@ app.get('/comments', async (req, res) => {
       .toArray();
     await connection.close();
 
-    const response = data.map(item => {
-      return {
-        _id: item._id,
-        date: item.date,
-        comment: item.comment,
-        name: item.user.name,
-      };
-    });
+    const response = data.map((item) => ({
+      _id: item._id,
+      date: item.date,
+      comment: item.comment,
+      name: item.user.name,
+    }));
 
     return res.send(response);
   } catch (error) {
