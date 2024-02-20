@@ -35,8 +35,27 @@ function renderMemberships() {
         divBottom.append(buttonDelete);
         buttonDelete.classList.add('btn-delete');
         buttonDelete.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+        buttonDelete.addEventListener('click', () => {
+          if (confirm(`Are you sure you want to delete „${membership.name}“ membership?`)) {
+            deleteMembership(membership._id);
+          }
+        });
       });
 
       hideSpinner();
+    });
+}
+
+function deleteMembership(id) {
+  showSpinner();
+
+  fetch('http://localhost:3000/memberships/' + id, {
+    method: 'DELETE',
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      hideSpinner();
+      alert(data.message);
+      renderMemberships();
     });
 }

@@ -167,6 +167,11 @@ label {
     padding: 10px;
 }
 
+textarea.inputs {
+    max-width: calc(100% - 22px);
+    min-width: calc(100% - 22px);
+}
+
 .input-block {
     display: flex;
     flex-direction: column;
@@ -180,13 +185,13 @@ label {
 
 .input-group i {
     position: absolute;
-    padding-top: 11px;
+    padding-top: 13px;
     padding-left: 10px;
 }
 
 .input-group input {
     padding-left: 30px;
-    width: calc(100% - 40px);
+    width: calc(100% - 42px);
 }
 
 .body-block {
@@ -308,7 +313,28 @@ label {
 }
 
 @media only screen and (min-width: 992px) {
-    
+    .input-block {
+        flex-direction: row;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .membership.form-block form .form-wrapper {
+        width: auto;
+    }
+
+    .inputs {
+        width: 500px;
+    }
+
+    .input-group input {
+        width: 480px;
+    }
+
+    textarea.inputs {
+        max-width: 500px;
+        min-width: 500px;
+    }
 }
 
 @media only screen and (min-width: 1200px) {

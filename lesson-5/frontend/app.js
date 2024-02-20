@@ -19,7 +19,7 @@ app.get('/memberships', (req, res) => {
 });
 
 app.get('/new-membership', (req, res) => {
-  res.render('new-membership', { title: 'New Membership', activePage: 'new_membership' });
+  res.render('new-membership', { title: 'New Membership', activePage: 'memberships' });
 });
 
 app.get('/users', (req, res) => {

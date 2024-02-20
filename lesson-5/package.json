@@ -4,8 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js",
-        "dev": "nodemon index.js",
+        "start-back": "node index.js",
+        "start-front": "node frontend/app.js",
+        "back": "nodemon index.js",
         "front": "nodemon frontend/app.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },

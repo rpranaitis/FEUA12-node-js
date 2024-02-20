@@ -36,12 +36,14 @@ app.post('/memberships', async (req, res) => {
     return res.status(400).send({ message: 'Bad request structure. Required fields: name, price, description' });
   }
 
+  req.body.price = parseFloat(price);
+
   try {
     const connection = await client.connect();
     await connection.db(process.env.DB_DATABASE).collection('services').insertOne(req.body);
     await connection.close();
 
-    return res.send({ message: 'Service successfully created.' });
+    return res.send({ message: 'Membership successfully created.' });
   } catch (error) {
     return res.status(500).send({ error });
   }
@@ -66,7 +68,7 @@ app.delete('/memberships/:id', async (req, res) => {
       return res.status(400).send({ message: `Service with id ${id} not found in database.` });
     }
 
-    return res.send({ message: 'Service successfully deleted.' });
+    return res.send({ message: 'Membership successfully deleted.' });
   } catch (error) {
     return res.status(500).send({ error });
   }
