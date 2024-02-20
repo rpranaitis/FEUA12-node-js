@@ -138,7 +138,7 @@ app.post('/users', async (req, res) => {
     if (!service) {
       await connection.close();
 
-      return res.status(500).send({ message: `Service with id ${service_id} not found.` });
+      return res.status(500).send({ message: `Membership with id ${service_id} not found.` });
     }
 
     req.body.service_id = new ObjectId(`${req.body.service_id}`);

@@ -1,6 +1,6 @@
 import { showSpinner, hideSpinner } from './script.js';
 
-const bodyBlock = document.querySelector('.memberships.body-block');
+const bodyBlock = document.querySelector('.body-block');
 
 renderMemberships();
 

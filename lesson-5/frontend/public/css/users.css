@@ -1,0 +1,51 @@
+.sort-wrapper {
+    justify-content: center;
+    display: none;
+}
+
+.sort-wrapper select, .sort-wrapper select:focus-visible {
+    padding: 2px;
+    border: 1px solid silver;
+    outline: none;
+    font-weight: bold;
+}
+
+.body-block .card {
+    background: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px;
+    gap: 30px;
+}
+
+.body-block .card .credentials {
+    font-weight: bold;
+    color: #b9b9b9;
+}
+
+.body-block .card .details {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    align-self: flex-start;
+    gap: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+    .body-block .card {
+        width: calc(50% - 50px);
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    
+}
+
+@media only screen and (min-width: 1200px) {
+    .body-block .card {
+        width: calc(33.33% - 53.3px);
+    }
+}

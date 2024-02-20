@@ -22,6 +22,10 @@ app.get('/new-membership', (req, res) => {
   res.render('new-membership', { title: 'New Membership', activePage: 'memberships' });
 });
 
+app.get('/new-user', (req, res) => {
+  res.render('new-user', { title: 'New User', activePage: 'users' });
+});
+
 app.get('/users', (req, res) => {
   res.render('users', { title: 'Users', activePage: 'users' });
 });

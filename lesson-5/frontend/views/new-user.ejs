@@ -3,7 +3,7 @@
   <head>
     <%- include('partials/head') %>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/css/new-membership.css" />
+    <link rel="stylesheet" href="/css/new-user.css" />
     <script defer type="module" src="/js/new-membership.js"></script>
   </head>
   <body>
@@ -11,31 +11,31 @@
     <div class="container">
       <div class="head-block">
         <div>
-          <h1>Create Membership</h1>
+          <h1>Create User</h1>
         </div>
       </div>
       <div class="form-block">
         <form>
           <div class="form-wrapper">
             <div class="input-block">
-              <label for="name">Name</label>
-              <input class="inputs" type="text" placeholder="Name" id="name" autocomplete="off" required />
+              <label for="membershipName">Name</label>
+              <input class="inputs" type="text" placeholder="Name" id="membershipName" autocomplete="off" required />
             </div>
             <div class="input-block">
-              <label for="price">Membership Price</label>
+              <label for="membershipPrice">Membership Price</label>
               <div class="input-group">
                 <i class="fa-solid fa-dollar-sign"></i>
-                <input class="inputs" type="text" placeholder="Membership Price" id="price" autocomplete="off" required />
+                <input class="inputs" type="text" placeholder="Membership Price" id="membershipPrice" autocomplete="off" required />
               </div>
             </div>
             <div class="input-block">
-              <label for="description">Description</label>
-              <textarea class="inputs" id="description" cols="30" rows="10" required></textarea>
+              <label for="membershipDescription">Description</label>
+              <textarea class="inputs" id="membershipDescription" cols="30" rows="10" required></textarea>
             </div>
           </div>
           <div>
-            <a href="/memberships" class="btn fw-bold">Cancel</a>
-            <button class="btn-primary fw-bold" type="submit">New Membership</button>
+            <a href="/users" class="btn fw-bold">Cancel</a>
+            <button class="btn-primary fw-bold" type="submit">New User</button>
           </div>
         </form>
       </div>

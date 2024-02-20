@@ -5,9 +5,9 @@ const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const name = document.getElementById('membershipName');
-  const price = document.getElementById('membershipPrice');
-  const description = document.getElementById('membershipDescription');
+  const name = document.getElementById('name');
+  const price = document.getElementById('price');
+  const description = document.getElementById('description');
 
   const data = {
     name: name.value,

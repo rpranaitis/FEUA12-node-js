@@ -2,7 +2,7 @@ import { showSpinner, hideSpinner } from './script.js';
 
 const sort = document.getElementById('sort');
 const sortWrapper = document.querySelector('.sort-wrapper');
-const bodyBlock = document.querySelector('.users.body-block');
+const bodyBlock = document.querySelector('.body-block');
 
 sort.addEventListener('change', (e) => {
   renderUsers(e.target.value);

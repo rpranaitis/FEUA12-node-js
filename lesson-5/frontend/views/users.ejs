@@ -3,6 +3,7 @@
   <head>
     <%- include('partials/head') %>
     <title><%= title %></title>
+    <link rel="stylesheet" href="/css/users.css" />
     <script defer type="module" src="/js/users.js"></script>
   </head>
   <body>
@@ -13,7 +14,7 @@
           <h1>User Management</h1>
         </div>
         <div>
-          <button class="btn-primary"><span class="sign">+</span>New User</button>
+          <a href="/new-user" class="btn-primary"><span class="sign">+</span>New User</a>
         </div>
       </div>
       <div class="sort-wrapper">
@@ -22,7 +23,7 @@
           <option value="desc">Sorting By Name: DESC</option>
         </select>
       </div>
-      <div class="users body-block"></div>
+      <div class="body-block"></div>
     </div>
     <%- include('partials/footer') %>
   </body>
