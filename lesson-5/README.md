@@ -2,12 +2,22 @@
 
 ### Installation
 
-Install the dependencies and start the servers.
+Install the dependencies:
 
 ```sh
 npm i
-npm run back (backend server startup)
-npm run front (frontend server startup)
 ```
 
-> Note: `Don't forget to update .env file with your own variables.`
+Start the backend server:
+
+```sh
+npm run back
+```
+
+Start the frontend server:
+
+```sh
+npm run front
+```
+
+> Note: `don't forget to update .env file with your own variables.`
