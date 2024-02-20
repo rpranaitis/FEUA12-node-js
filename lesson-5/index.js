@@ -33,7 +33,7 @@ app.post('/memberships', async (req, res) => {
   const { name, price, description } = req.body;
 
   if (!name || !price || !description) {
-    return res.status(400).send({ message: 'Bad request structure. Required fields: name, price, description' });
+    return res.status(400).send({ message: 'Bad request structure. Required fields: name, price, description', status: 400 });
   }
 
   req.body.price = parseFloat(price);
@@ -43,7 +43,7 @@ app.post('/memberships', async (req, res) => {
     await connection.db(process.env.DB_DATABASE).collection('services').insertOne(req.body);
     await connection.close();
 
-    return res.send({ message: 'Membership successfully created.' });
+    return res.send({ message: 'Membership successfully created.', status: 200 });
   } catch (error) {
     return res.status(500).send({ error });
   }
@@ -53,7 +53,7 @@ app.delete('/memberships/:id', async (req, res) => {
   const { id } = req.params;
 
   if (!ObjectId.isValid(id)) {
-    return res.status(400).send({ message: 'Invalid service id format. Must be a 24 character hex string.' });
+    return res.status(400).send({ message: 'Invalid service id format. Must be a 24 character hex string.', status: 400 });
   }
 
   try {
@@ -65,10 +65,10 @@ app.delete('/memberships/:id', async (req, res) => {
     await connection.close();
 
     if (response.deletedCount === 0) {
-      return res.status(400).send({ message: `Service with id ${id} not found in database.` });
+      return res.status(400).send({ message: `Service with id ${id} not found in database.`, status: 400 });
     }
 
-    return res.send({ message: 'Membership successfully deleted.' });
+    return res.send({ message: 'Membership successfully deleted.', status: 200 });
   } catch (error) {
     return res.status(500).send({ error });
   }
@@ -121,11 +121,11 @@ app.post('/users', async (req, res) => {
   const { name, surname, email, service_id } = req.body;
 
   if (!name || !surname || !email || !service_id) {
-    return res.status(400).send({ message: 'Bad request structure. Required fields: name, surname, email, service_id' });
+    return res.status(400).send({ message: 'Bad request structure. Required fields: name, surname, email, service_id', status: 400 });
   }
 
   if (!ObjectId.isValid(service_id)) {
-    return res.status(400).send({ message: 'Invalid service id format. Must be a 24 character hex string.' });
+    return res.status(400).send({ message: 'Invalid service id format. Must be a 24 character hex string.', status: 400 });
   }
 
   try {
@@ -138,7 +138,7 @@ app.post('/users', async (req, res) => {
     if (!service) {
       await connection.close();
 
-      return res.status(500).send({ message: `Membership with id ${service_id} not found.` });
+      return res.status(404).send({ message: `Membership with id ${service_id} not found.`, status: 404 });
     }
 
     req.body.service_id = new ObjectId(`${req.body.service_id}`);
@@ -147,7 +147,7 @@ app.post('/users', async (req, res) => {
     await connection.db(process.env.DB_DATABASE).collection('users').insertOne(req.body);
     await connection.close();
 
-    return res.send({ message: `User ${name} ${surname} with ${service.name} membership successfully created.` });
+    return res.send({ message: `User ${name} ${surname} with ${service.name} membership successfully created.`, status: 200 });
   } catch (error) {
     return res.status(500).send({ error });
   }

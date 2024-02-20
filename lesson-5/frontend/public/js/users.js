@@ -33,7 +33,7 @@ function renderUsers(order = 'asc') {
 
         const spanEmail = document.createElement('span');
         divDetails.append(spanEmail);
-        spanEmail.textContent = 'Email address: ';
+        spanEmail.textContent = 'Email Address: ';
 
         const spanEmailValue = document.createElement('span');
         spanEmail.append(spanEmailValue);

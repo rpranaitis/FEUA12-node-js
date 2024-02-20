@@ -4,7 +4,7 @@
     <%- include('partials/head') %>
     <title><%= title %></title>
     <link rel="stylesheet" href="/css/new-user.css" />
-    <script defer type="module" src="/js/new-membership.js"></script>
+    <script defer type="module" src="/js/new-user.js"></script>
   </head>
   <body>
     <%- include('partials/spinner') %> <%- include('partials/header') %>
@@ -17,20 +17,29 @@
       <div class="form-block">
         <form>
           <div class="form-wrapper">
-            <div class="input-block">
-              <label for="membershipName">Name</label>
-              <input class="inputs" type="text" placeholder="Name" id="membershipName" autocomplete="off" required />
-            </div>
-            <div class="input-block">
-              <label for="membershipPrice">Membership Price</label>
-              <div class="input-group">
-                <i class="fa-solid fa-dollar-sign"></i>
-                <input class="inputs" type="text" placeholder="Membership Price" id="membershipPrice" autocomplete="off" required />
+            <div class="input-block-wrapper">
+              <div class="input-block">
+                <label for="name"
+                  >First Name <span><i class="fa-solid fa-asterisk"></i></span
+                ></label>
+                <input id="name" class="inputs" type="text" autocomplete="off" required />
+              </div>
+              <div class="input-block">
+                <label for="surname"
+                  >Last Name <span><i class="fa-solid fa-asterisk"></i></span
+                ></label>
+                <input id="surname" class="inputs" type="text" autocomplete="off" required />
               </div>
             </div>
             <div class="input-block">
-              <label for="membershipDescription">Description</label>
-              <textarea class="inputs" id="membershipDescription" cols="30" rows="10" required></textarea>
+              <label for="email"
+                >Email Address <span><i class="fa-solid fa-asterisk"></i></span
+              ></label>
+              <input id="email" class="inputs" type="email" autocomplete="off" required />
+            </div>
+            <div class="input-block">
+              <label for="memberships">Change Membership</label>
+              <select id="memberships" class="inputs" required></select>
             </div>
           </div>
           <div>

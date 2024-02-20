@@ -28,6 +28,9 @@ form.addEventListener('submit', (e) => {
     .then((data) => {
       hideSpinner();
       alert(data.message);
-      window.location.href = '/memberships';
+
+      if (data.status === 200) {
+        window.location.href = '/memberships';
+      }
     });
 });
