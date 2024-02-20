@@ -3,10 +3,27 @@
   <head>
     <%- include('partials/head') %>
     <title><%= title %></title>
+    <script defer type="module" src="/js/users.js"></script>
   </head>
   <body>
-    <%- include('partials/header') %>
-    <div class="container">users</div>
+    <%- include('partials/spinner') %> <%- include('partials/header') %>
+    <div class="container">
+      <div class="head-block">
+        <div>
+          <h1>User Management</h1>
+        </div>
+        <div>
+          <button class="btn-primary"><span class="sign">+</span>New User</button>
+        </div>
+      </div>
+      <div class="sort-wrapper">
+        <select id="sort">
+          <option value="asc" selected>Sorting By Name: ASC</option>
+          <option value="desc">Sorting By Name: DESC</option>
+        </select>
+      </div>
+      <div class="users body-block"></div>
+    </div>
     <%- include('partials/footer') %>
   </body>
 </html>

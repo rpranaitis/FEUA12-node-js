@@ -3,10 +3,25 @@
   <head>
     <%- include('partials/head') %>
     <title><%= title %></title>
+    <script defer type="module" src="/js/memberships.js"></script>
   </head>
   <body>
-    <%- include('partials/header') %>
-    <div class="container">memberships</div>
+    <%- include('partials/spinner') %> <%- include('partials/header') %>
+    <div class="container">
+      <div class="head-block">
+        <div>
+          <h1>Membership Management</h1>
+          <span class="description"
+            >Here you can manage your membership packages. Note: Make sure you are not deleting or deactivating packages assigned to active
+            users.
+          </span>
+        </div>
+        <div>
+          <button class="btn-primary"><span class="sign">+</span>New Membership</button>
+        </div>
+      </div>
+      <div class="memberships body-block"></div>
+    </div>
     <%- include('partials/footer') %>
   </body>
 </html>

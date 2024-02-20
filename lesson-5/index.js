@@ -20,7 +20,7 @@ function generateRandomIPAddress() {
 app.get('/memberships', async (req, res) => {
   try {
     const connection = await client.connect();
-    const data = await connection.db(process.env.DB_DATABASE).collection('services').find().toArray();
+    const data = await connection.db(process.env.DB_DATABASE).collection('services').find().sort({ price: 1 }).toArray();
     await connection.close();
 
     return res.send(data);
