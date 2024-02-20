@@ -51,12 +51,7 @@ function renderUsers(order = 'asc') {
 
         const spanIp = document.createElement('span');
         divDetails.append(spanIp);
-        spanIp.textContent = 'IP: ';
-
-        const spanIpValue = document.createElement('span');
-        spanIp.append(spanIpValue);
-        spanIpValue.classList.add('fw-bold');
-        spanIpValue.textContent = user.ip;
+        spanIp.textContent = `IP: ${user.ip}`;
       });
 
       if (data.length) {

@@ -82,6 +82,22 @@ span.sign {
     margin-right: 15px;
 }
 
+input, textarea {
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+.btn {
+    background: none;
+    color: black;
+    padding: 10px 20px;
+    font-size: 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .btn-primary {
     background: #677ee8;
     color: white;
@@ -90,6 +106,7 @@ span.sign {
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .btn-delete {
@@ -114,7 +131,64 @@ span.sign {
     padding: 2px;
     border: 1px solid silver;
     outline: none;
+    font-weight: bold;
 }
+
+.form-block {
+    background: white;
+    margin-top: -20px;
+    padding: 30px 15px;
+}
+
+.membership.form-block form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.membership.form-block form .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 20px;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+}
+
+.inputs {
+    outline: none;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.input-block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group i {
+    position: absolute;
+    padding-top: 11px;
+    padding-left: 10px;
+}
+
+.input-group input {
+    padding-left: 30px;
+    width: calc(100% - 40px);
+}
+
 .body-block {
     display: flex;
     flex-wrap: wrap;

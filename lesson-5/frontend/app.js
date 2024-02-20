@@ -18,6 +18,10 @@ app.get('/memberships', (req, res) => {
   res.render('memberships', { title: 'Memberships', activePage: 'memberships' });
 });
 
+app.get('/new-membership', (req, res) => {
+  res.render('new-membership', { title: 'New Membership', activePage: 'new_membership' });
+});
+
 app.get('/users', (req, res) => {
   res.render('users', { title: 'Users', activePage: 'users' });
 });

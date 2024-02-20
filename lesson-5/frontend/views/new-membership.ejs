@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head') %>
+    <title><%= title %></title>
+    <script defer type="module" src="/js/new-membership.js"></script>
+  </head>
+  <body>
+    <%- include('partials/spinner') %> <%- include('partials/header') %>
+    <div class="container">
+      <div class="head-block">
+        <div>
+          <h1>Create Membership</h1>
+        </div>
+      </div>
+      <div class="membership form-block">
+        <form>
+          <div class="form-wrapper">
+            <div class="input-block">
+              <label for="name">Name</label>
+              <input class="inputs" type="text" placeholder="Name" id="name" autocomplete="off" required />
+            </div>
+            <div class="input-block">
+              <label for="price">Membership Price</label>
+              <div class="input-group">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <input class="inputs" type="number" placeholder="Membership Price" id="price" autocomplete="off" required />
+              </div>
+            </div>
+            <div class="input-block">
+              <label for="description">Description</label>
+              <textarea class="inputs" id="description" cols="30" rows="10" required></textarea>
+            </div>
+          </div>
+          <div>
+            <a href="/memberships" class="btn fw-bold">Cancel</a>
+            <button class="btn-primary fw-bold" type="submit">New Membership</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <%- include('partials/footer') %>
+  </body>
+</html>
